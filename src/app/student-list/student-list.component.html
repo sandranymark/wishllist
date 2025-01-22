@@ -1,0 +1,23 @@
+<div class="container-wrapper">
+
+    <!-- Färgval för alla -->
+    <div class="set-all">
+        <h3>Välj en färg för alla eleverna:</h3>
+        <input type="color" (change)="setColorForAll($event)" />
+    </div>
+    <h2 class="elevlista">Elevlista</h2>
+    <ul>
+        <!-- Loopar igenom eleverna -->
+        <li *ngFor="let student of students" [style.background]="student.color" class="student-item">
+            <!-- Namn och ikon -->
+            <span>{{ student.name }}</span>
+            <button (click)="toggleColorPicker(student)">Välj färg</button>
+
+            <!-- Färgval för enskild elev -->
+            <input *ngIf="student.showColorPicker" type="color" (change)="setColorForStudent(student, $event)" />
+        </li>
+    </ul>
+
+
+
+</div>

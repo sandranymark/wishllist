@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { WishItem } from '../shared/models/wishItem';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { StudentListComponent } from './student-list/student-list.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css'],
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, StudentListComponent],
   providers: [],
 })
 export class AppComponent {
@@ -18,7 +19,7 @@ export class AppComponent {
     new WishItem('Go to the bathroom'),
   ];
 
-  title = 'My wishllist';
+  title = 'My wishlist';
 
   newWishText = '';
 
